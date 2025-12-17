@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button>Click to Hide</button>
+    <p style="border: 1px solid red; padding: 10px">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae pariatur
+      fuga totam dolorem magnam eveniet optio tempore deleniti consequatur
+      accusamus? Omnis veniam facere deleniti praesentium eligendi minus dolorum
+      molestias magni!
+    </p>
+    <input type="text" value="Admin" />
+  </body>
+
+  <script>
+    //call back imp
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("p").show(2000, function () {
+          $("p").hide(2000);
+        });
+      });
+    });
+  </script>
+</html>

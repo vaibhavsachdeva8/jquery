@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#singupForm").validate({
+          rules: {
+            firstname: "required",
+            lastname: "required",
+            email: "required",
+          },
+          messages: {
+            firstname: "Please Enter Your Name",
+            lastname: "Please Enter Your last name",
+            email: "Please Enter Your Email",
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Jquery Validtion</h1>
+    <form id="singupForm">
+      <p>
+        <label for="firstname">First Name</label>
+        <input id="firstname" name="firstname" type="text" />
+      </p>
+      <p>
+        <label for="lastname">Last Name</label>
+        <input id="lastname" name="lastname" type="text" />
+      </p>
+      <p>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text" />
+      </p>
+      <p>
+        <button>Submit</button>
+      </p>
+    </form>
+  </body>
+</html>

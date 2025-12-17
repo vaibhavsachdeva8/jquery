@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          $.ajax({
+            url: "https://randomuser.me/api",
+            success: function (data) {
+              // console.warn(data.results.length);
+              for (var i = 0; i < data.results.length; i++) {
+                var res = data.results;
+                console.warn(res[i]);
+                $(".fname").html(res[i].name.first);
+                $(".lname").html(res[i].name.last);
+                $(".uimage").attr("src", res[i].picture.large);
+                $(".uimage").css("border-radius", "100%");
+              }
+            },
+            error: function (err) {
+              console.warn(err);
+            },
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Ajax | Example</h1>
+    <button>Get Random User Profile</button>
+    <div
+      style="
+        width: 250px;
+        margin: 0px auto;
+        border: 1px solid red;
+        padding: 30px;
+      "
+    >
+      <p class="fname"></p>
+      <p class="lname"></p>
+      <p>
+        <img class="uimage" />
+      </p>
+    </div>
+  </body>
+</html>

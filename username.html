@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        width: 250px;
+        height: 250px;
+      }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          $.ajax({
+            url: "https://api.genderize.io/?name=vaibhav",
+            success: function (data) {
+              //console.warn(data.gender);
+              $("p").text(data.gender);
+            },
+            error: function (err) {
+              $("p").text(err);
+            },
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Ajax | Example</h1>
+    <input type="text" id="name" />
+    <button>Find Gender</button>
+    <p></p>
+  </body>
+</html>
